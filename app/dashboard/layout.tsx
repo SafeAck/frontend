@@ -8,7 +8,7 @@ const DashboardLayout = ({
 }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <Flex>
-            <Box backgroundColor="telegram.300" flex='1'>
+            <Box flex='1'>
                 <Sidebar />
             </Box>
             <Box flex='4'>
