@@ -1,6 +1,10 @@
-import { Button, Flex, Heading, Input } from "@chakra-ui/react";
+'use client';
+
+import { useColorMode, Button, Flex, Heading, Input } from "@chakra-ui/react";
 
 const IndexPage = () => {
+    const { colorMode, toggleColorMode } = useColorMode()
+
     return (
         <Flex height="100vh" alignItems="center" justifyContent="center">
             <Flex
@@ -25,6 +29,9 @@ const IndexPage = () => {
                 />
                 <Button colorScheme="telegram" mb={6}>
                     Login
+                </Button>
+                <Button onClick={toggleColorMode}>
+                    Toggle {colorMode === "light" ? "Dark" : "Light"}
                 </Button>
             </Flex>
         </Flex>
