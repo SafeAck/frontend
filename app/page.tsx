@@ -3,7 +3,7 @@
 import { useColorMode, Button, Flex, Heading, Input } from "@chakra-ui/react";
 
 const IndexPage = () => {
-    const { colorMode, toggleColorMode } = useColorMode()
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return (
         <Flex height="100vh" alignItems="center" justifyContent="center">
@@ -14,7 +14,7 @@ const IndexPage = () => {
                 rounded={6}
             >
                 <Heading mb={6} textAlign={"center"}>
-                    Login
+                    SafeAck Dashboard
                 </Heading>
                 <Input
                     placeholder="john.doe@example.com"
