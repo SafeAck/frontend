@@ -1,20 +1,23 @@
 import { Providers } from './providers'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./ui/globals.css";
 
-export const metadata = {
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
   title: "SafeAck - API Security Platform",
-  description: "Platform to Safely Explore and Hack APIs"
-}
+  description: "Platform to Safely Explore and Hack APIs",
+};
 
 export default function RootLayout({
-    children,
-}: {
-  readonly children: React.ReactNode,
-}) {
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang='en'>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+    <html lang="en">
+      <body className={inter.className}><Providers>{children}</Providers></body>
     </html>
-  )
+  );
 }
