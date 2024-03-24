@@ -1,5 +1,7 @@
-const Login = () => {
-    return (<div>Login</div>)
-}
+import LoginBox from "../ui/login/LoginBox/LoginBox";
 
-export default Login
+const LoginPage = () => {
+    return <LoginBox />;
+};
+
+export default LoginPage;

@@ -1,5 +1,5 @@
-import LoginBox from "./ui/login/LoginBox/LoginBox";
 import dynamic from "next/dynamic";
+import LoginBox from "./ui/login/LoginBox/LoginBox";
 
 // const ThemeChangerButton = dynamic(
 //     () => import("./ui/utilComponents/ThemeChangerButton/ThemeChangerButton"),
@@ -7,11 +7,7 @@ import dynamic from "next/dynamic";
 // );
 
 const IndexPage = () => {
-    return (
-        <div>
-            <LoginBox />
-        </div>
-    );
+    return <LoginBox />;
 };
 
 export default IndexPage;
