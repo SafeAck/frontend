@@ -1,5 +1,4 @@
 import {
-    Button,
     Flex,
     Grid,
     GridItem,
@@ -9,7 +8,6 @@ import {
     Stack,
     Text,
 } from "@chakra-ui/react";
-import { MdLogout } from "react-icons/md";
 
 // Local imports
 import { noUserImage } from "../../../constants/urls";

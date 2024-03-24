@@ -8,7 +8,7 @@ import { MenuItem } from "../menuItems/menuItems";
 
 const MenuLink: React.FC<{ item: MenuItem }> = ({ item }) => {
     const pathname: string = usePathname();
-    const hoverBgColor = useColorModeValue("gray.100", "gray.700");
+    const hoverBgColor = useColorModeValue("gray.100", "gray.900");
 
     return (
         <Link
