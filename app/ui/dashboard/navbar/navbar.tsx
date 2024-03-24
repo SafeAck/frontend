@@ -6,7 +6,6 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
-    InputRightElement,
     Text,
 } from "@chakra-ui/react";
 import {
@@ -15,6 +14,7 @@ import {
     MdPublic,
     MdSearch,
 } from "react-icons/md";
+import ThemeChangerButton from "../../utilComponents/ThemeChangerButton/ThemeChangerButton";
 
 const Navbar: React.FC<{ softBgColor: string }> = ({ softBgColor }) => {
     const pathname = usePathname();
@@ -30,7 +30,9 @@ const Navbar: React.FC<{ softBgColor: string }> = ({ softBgColor }) => {
             backgroundColor={softBgColor}
         >
             <Box>
-                <Text fontWeight="bold" textTransform="capitalize">{pageName}</Text>
+                <Text fontWeight="bold" textTransform="capitalize">
+                    {pageName}
+                </Text>
             </Box>
             <Flex
                 alignItems="center"
@@ -48,6 +50,7 @@ const Navbar: React.FC<{ softBgColor: string }> = ({ softBgColor }) => {
                     <MdOutlineChat size={iconSize} />
                     <MdNotifications size={iconSize} />
                     <MdPublic size={iconSize} />
+                    <ThemeChangerButton iconSize={iconSize}/>
                 </Flex>
             </Flex>
         </Flex>
