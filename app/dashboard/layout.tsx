@@ -5,11 +5,18 @@ import { Flex, Box, useColorModeValue } from "@chakra-ui/react";
 import { Providers } from "../providers";
 import Sidebar from "../ui/dashboard/sidebar/sidebar";
 import Navbar from "../ui/dashboard/navbar/navbar";
+import {
+    lightThemeSideBarBgColor,
+    darkThemeSideBarBgColor,
+} from "../ui/constants/colors";
 
 const DashboardLayout = ({
     children,
 }: Readonly<{ children: React.ReactNode }>) => {
-    const softBgColor = useColorModeValue("gray.200", "gray.900");
+    const softBgColor = useColorModeValue(
+        lightThemeSideBarBgColor,
+        darkThemeSideBarBgColor
+    );
 
     return (
         <Flex>

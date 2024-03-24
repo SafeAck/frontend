@@ -4,11 +4,19 @@ import { Link } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 
+// Local imports
 import { MenuItem } from "../menuItems/menuItems";
+import {
+    lightThemeHoverBgColor,
+    darkThemeHoverBgColor,
+} from "../../../constants/colors";
 
 const MenuLink: React.FC<{ item: MenuItem }> = ({ item }) => {
     const pathname: string = usePathname();
-    const hoverBgColor = useColorModeValue("gray.100", "gray.700");
+    const hoverBgColor = useColorModeValue(
+        lightThemeHoverBgColor,
+        darkThemeHoverBgColor
+    );
 
     return (
         <Link
