@@ -17,13 +17,10 @@ const MenuLink: React.FC<{ item: MenuItem }> = ({ item }) => {
             display="flex"
             alignItems="center"
             gap="10px"
-            margin="5px 0px"
+            margin="3px 0px"
             borderRadius="10px"
             _hover={{ backgroundColor: hoverBgColor }}
             backgroundColor={pathname === item.path ? hoverBgColor : undefined}
-            // className={`${styles.container} ${
-            //     pathname === item.path && styles.active
-            // }`}
         >
             {item.icon}
             {item.title}
