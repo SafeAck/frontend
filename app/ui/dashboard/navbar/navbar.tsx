@@ -14,11 +14,16 @@ import {
     MdSearch,
 } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar: React.FC<{ softBgColor: string  }> = ({ softBgColor }) => {
     const pathname = usePathname();
 
     return (
-        <Flex justifyContent="space-between" alignItems="center" padding="20px" borderRadius="10px">
+        <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            padding="20px"
+            borderRadius="10px"
+        >
             <Box>{pathname.split("/").pop()}</Box>
             <Box>
                 <InputGroup>

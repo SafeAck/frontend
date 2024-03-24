@@ -1,3 +1,5 @@
+"use client";
+
 import {
     Flex,
     Grid,
@@ -14,7 +16,7 @@ import { MenuCategory, MenuItem, menuItems } from "./menuItems/menuItems";
 import { noUserImage } from "../../../constants/urls";
 import MenuLink from "./menuLink/menuLink";
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
     return (
         <Stack display="sticky" top="40px" my="5" mx="4">
             <Flex alignItems="center" gap="20px" marginBottom="20px">
