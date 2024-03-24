@@ -1,116 +1,53 @@
-import { Box, Image, Stack } from "@chakra-ui/react";
 import {
-    MdDashboard,
-    MdSupervisedUserCircle,
-    MdShoppingBag,
-    MdAttachMoney,
-    MdWork,
-    MdAnalytics,
-    MdPeople,
-    MdOutlineSettings,
-    MdHelpCenter,
-    MdLogout,
-} from "react-icons/md";
+    Button,
+    Flex,
+    Grid,
+    GridItem,
+    ListItem,
+    UnorderedList,
+    Image,
+    Stack,
+    Text,
+} from "@chakra-ui/react";
+import { MdLogout } from "react-icons/md";
 
-const menuItems = [
-    {
-        title: "Pages",
-        list: [
-            {
-                title: "Dashboard",
-                path: "/dashboard",
-                icon: <MdDashboard />,
-            },
-            {
-                title: "Users",
-                path: "/dashboard/users",
-                icon: <MdSupervisedUserCircle />,
-            },
-            {
-                title: "Products",
-                path: "/dashboard/products",
-                icon: <MdShoppingBag />,
-            },
-            {
-                title: "Transactions",
-                path: "/dashboard/transactions",
-                icon: <MdAttachMoney />,
-            },
-        ],
-    },
-    {
-        title: "Analytics",
-        list: [
-            {
-                title: "Revenue",
-                path: "/dashboard/revenue",
-                icon: <MdWork />,
-            },
-            {
-                title: "Reports",
-                path: "/dashboard/reports",
-                icon: <MdAnalytics />,
-            },
-            {
-                title: "Teams",
-                path: "/dashboard/teams",
-                icon: <MdPeople />,
-            },
-        ],
-    },
-    {
-        title: "User",
-        list: [
-            {
-                title: "Settings",
-                path: "/dashboard/settings",
-                icon: <MdOutlineSettings />,
-            },
-            {
-                title: "Help",
-                path: "/dashboard/help",
-                icon: <MdHelpCenter />,
-            },
-        ],
-    },
-];
+// Local imports
+import { noUserImage } from "../../../constants/urls";
+import { MenuCategory, MenuItem, menuItems } from "./menuItems/menuItems";
+import MenuLink from "./menuLink/menuLink";
 
 const Sidebar = () => {
     return (
-        <Stack>
-            <Box>
+        <Stack display="sticky" top="40px" my="5" mx="4">
+            <Flex alignItems="center" gap="20px" marginBottom="20px">
                 <Image
-                    src={"/noavatar.png"}
-                    alt=""
+                    src={noUserImage}
+                    alt="User Image"
                     width="50"
                     height="50"
+                    borderRadius="50px"
+                    objectFit="cover"
                 />
-                <Box>
-                    <span>{user.username}</span>
-                    <span className={styles.userTitle}>Administrator</span>
-                </Box>
-            </Box>
-            <ul className={styles.list}>
-                {menuItems.map((cat) => (
-                    <li key={cat.title}>
-                        <span className={styles.cat}>{cat.title}</span>
-                        {cat.list.map((item) => (
+                <Grid>
+                    <GridItem fontWeight={500}>username</GridItem>
+                    <GridItem fontSize="12px">Administrator</GridItem>
+                </Grid>
+            </Flex>
+            <UnorderedList listStyleType={"none"}>
+                {menuItems.map((cat: MenuCategory) => (
+                    <ListItem key={cat.title}>
+                        {/* <span>{cat.title}</span> */}
+                        <Flex>
+                            <Text fontWeight="bold" margin="10px 0px">
+                                {cat.title}
+                            </Text>
+                        </Flex>
+                        {cat.list.map((item: MenuItem) => (
                             <MenuLink item={item} key={item.title} />
                         ))}
-                    </li>
+                    </ListItem>
                 ))}
-            </ul>
-            <form
-                action={async () => {
-                    "use server";
-                    await signOut();
-                }}
-            >
-                <button className={styles.logout}>
-                    <MdLogout />
-                    Logout
-                </button>
-            </form>
+            </UnorderedList>
         </Stack>
     );
 };

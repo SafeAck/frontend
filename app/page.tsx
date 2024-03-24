@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import LoginBox from "./ui/login/LoginBox/LoginBox";
 
 // const ThemeChangerButton = dynamic(
