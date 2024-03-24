@@ -6,6 +6,8 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
+    InputRightElement,
+    Text,
 } from "@chakra-ui/react";
 import {
     MdNotifications,
@@ -14,31 +16,40 @@ import {
     MdSearch,
 } from "react-icons/md";
 
-const Navbar: React.FC<{ softBgColor: string  }> = ({ softBgColor }) => {
+const Navbar: React.FC<{ softBgColor: string }> = ({ softBgColor }) => {
     const pathname = usePathname();
+    const iconSize = 25;
+    const pageName = pathname.split("/").pop();
 
     return (
         <Flex
             justifyContent="space-between"
             alignItems="center"
-            padding="20px"
+            padding="10px"
             borderRadius="10px"
+            backgroundColor={softBgColor}
         >
-            <Box>{pathname.split("/").pop()}</Box>
             <Box>
+                <Text fontWeight="bold" textTransform="capitalize">{pageName}</Text>
+            </Box>
+            <Flex
+                alignItems="center"
+                gap="10px"
+                padding="10px"
+                borderRadius="10px"
+            >
                 <InputGroup>
                     <InputLeftElement pointerEvents="none">
-                        <MdSearch />
+                        <MdSearch size={iconSize} />
                     </InputLeftElement>
                     <Input type="text" placeholder="Search" />
                 </InputGroup>
-
-                <Box>
-                    <MdOutlineChat size={20} />
-                    <MdNotifications size={20} />
-                    <MdPublic size={20} />
-                </Box>
-            </Box>
+                <Flex gap="10px">
+                    <MdOutlineChat size={iconSize} />
+                    <MdNotifications size={iconSize} />
+                    <MdPublic size={iconSize} />
+                </Flex>
+            </Flex>
         </Flex>
     );
 };
