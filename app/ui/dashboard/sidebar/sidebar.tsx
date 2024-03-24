@@ -10,8 +10,8 @@ import {
 } from "@chakra-ui/react";
 
 // Local imports
-import { noUserImage } from "../../../constants/urls";
 import { MenuCategory, MenuItem, menuItems } from "./menuItems/menuItems";
+import { noUserImage } from "../../../constants/urls";
 import MenuLink from "./menuLink/menuLink";
 
 const Sidebar = () => {
@@ -34,7 +34,6 @@ const Sidebar = () => {
             <UnorderedList listStyleType={"none"}>
                 {menuItems.map((cat: MenuCategory) => (
                     <ListItem key={cat.title}>
-                        {/* <span>{cat.title}</span> */}
                         <Flex>
                             <Text fontWeight="bold" margin="10px 0px">
                                 {cat.title}
