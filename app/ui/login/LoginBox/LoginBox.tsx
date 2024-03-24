@@ -2,7 +2,7 @@ import { Button, Flex, Image, Input } from "@chakra-ui/react";
 import React from "react";
 
 
-import { safeackGithubLogoUrl } from "../../../constants/urls";
+import { safeackGithubLogoUrl, safeackBGlessImage } from "../../../constants/urls";
 import PasswordInput from "../../utilComponents/PasswordInput/PasswordInput";
 
 const LoginBox: React.FC = () => {
@@ -15,7 +15,7 @@ const LoginBox: React.FC = () => {
                 rounded={6}
             >
                 <Image
-                    src={safeackGithubLogoUrl}
+                    src={safeackBGlessImage}
                     alt="SafeAck Logo"
                     borderRadius="full"
                     boxSize="200px"
@@ -27,13 +27,7 @@ const LoginBox: React.FC = () => {
                     variant="filled"
                     mb={3}
                 />
-                {/* <Input
-                    placeholder="**************"
-                    variant="filled"
-                    mb={6}
-                    type="password"
-                /> */}
-                <PasswordInput mb={6} />
+                <PasswordInput />
                 <Button colorScheme="telegram" mb={6}>
                     Login
                 </Button>

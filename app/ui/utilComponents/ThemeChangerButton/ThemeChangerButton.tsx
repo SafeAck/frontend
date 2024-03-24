@@ -1,15 +1,20 @@
 "use client";
 
-import { useColorMode, Button } from "@chakra-ui/react";
+import { useColorMode, Box } from "@chakra-ui/react";
 import { GoSun, GoMoon } from "react-icons/go";
+import {MdWbSunny, MdOutlineDarkMode} from "react-icons/md";
 
-const ThemeChangerButton:React.FC = () => {
+const ThemeChangerButton: React.FC<{
+    iconSize: string | number | undefined;
+}> = ({ iconSize }) => {
     const { colorMode, toggleColorMode } = useColorMode();
 
     return (
-        <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <GoMoon /> : <GoSun />}
-        </Button>
+            colorMode === "light" ? (
+                <MdOutlineDarkMode size={iconSize} onClick={toggleColorMode}/>
+            ) : (
+                <MdWbSunny size={iconSize} onClick={toggleColorMode}/>
+            )
     );
 };
 
